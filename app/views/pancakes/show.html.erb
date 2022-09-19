@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @pancake %>
+
+<div>
+  <%= link_to "Edit this pancake", edit_pancake_path(@pancake) %> |
+  <%= link_to "Back to pancakes", pancakes_path %>
+
+  <%= button_to "Destroy this pancake", @pancake, method: :delete %>
+</div>

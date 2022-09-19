@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Pancakes</h1>
+
+<div id="pancakes">
+  <% @pancakes.each do |pancake| %>
+    <%= render pancake %>
+    <p>
+      <%= link_to "Show this pancake", pancake %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New pancake", new_pancake_path %>

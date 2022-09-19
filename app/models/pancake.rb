@@ -1,0 +1,2 @@
+class Pancake < ApplicationRecord
+end
