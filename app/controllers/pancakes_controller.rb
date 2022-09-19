@@ -1,6 +1,7 @@
 class PancakesController < ApplicationController
   before_action :set_pancake, only: %i[ show edit update destroy ]
 
+
   # GET /pancakes or /pancakes.json
   def index
     @pancakes = Pancake.all
