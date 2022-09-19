@@ -1,24 +1,34 @@
-# README
+# View Playground
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+I'm going to start playing around with Rails views to see how we can do better.
 
-Things you may want to cover:
+Generally, people run into problems with instance variables. Their scope is too global, especially for complex views and large Rails apps, which creates implicit dependencies that are hard to debug.
 
-* Ruby version
+Most of the late component libraries that have become available to Rails, like [ViewComponent](https://viewcomponent.org), were created to solve this problem.
 
-* System dependencies
+## Don't render instance variables with the `partial` method
 
-* Configuration
+Leaking instance variables into partials is bad.
 
-* Database creation
+* https://andycroll.com/ruby/dont-use-instance-variables-in-partials/
+* https://biggerpockets.github.io/patterns/rails/no-instance-vars-in-partials-or-helpers
 
-* Database initialization
+The [`partial_helper`](./app/helpers/partial_helper.rb) file solves that problem by isolating the view context of the partial renderer, which eliminates the instance variable.
 
-* How to run the test suite
+In your code you'd replace instances of the `render` method:
 
-* Services (job queues, cache servers, search engines, etc.)
+```ruby
+<%= render "form", pancake: @pancake %>
+```
 
-* Deployment instructions
+with the `partial` method:
 
-* ...
+```ruby
+<%= partial "form", pancake: @pancake %>
+```
+
+Now when you call the method it won't leak instance varialbes, yay! They're all `nil` now!
+
+## Replace the Rails layout & template stack with a component library like Phlex or ActionView
+
+Stay tuned! I'll give it a go with both frameworks and see what happens.
