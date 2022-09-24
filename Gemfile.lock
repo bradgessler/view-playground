@@ -91,9 +91,6 @@ GEM
     erubi (1.11.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
-    html-pipeline (2.14.2)
-      activesupport (>= 2)
-      nokogiri (>= 1.4)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.1.5)
@@ -136,7 +133,7 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.8-arm64-darwin)
       racc (~> 1.4)
-    phlex (0.2.1)
+    phlex (0.2.2)
       zeitwerk (~> 2.6)
     public_suffix (5.0.0)
     puma (5.6.5)
@@ -203,6 +200,8 @@ GEM
     stimulus-rails (1.1.0)
       railties (>= 6.0.0)
     strscan (3.0.4)
+    tailwindcss-rails (2.0.14-arm64-darwin)
+      railties (>= 6.0.0)
     thor (1.2.1)
     timeout (0.3.0)
     turbo-rails (1.1.1)
@@ -211,10 +210,6 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
-    view_component (2.72.0)
-      activesupport (>= 5.0.0, < 8.0)
-      concurrent-ruby (~> 1.0)
-      method_source (~> 1.0)
     web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -239,10 +234,8 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
-  html-pipeline (~> 2.14)
   importmap-rails
   jbuilder
-  nokogiri (~> 1.13)
   phlex (~> 0.2.1)
   puma (~> 5.0)
   rails (~> 7.0.4)
@@ -254,9 +247,9 @@ DEPENDENCIES
   sprockets-rails
   sqlite3 (~> 1.4)
   stimulus-rails
+  tailwindcss-rails (~> 2.0)
   turbo-rails
   tzinfo-data
-  view_component (~> 2.72)
   web-console
   webdrivers
 

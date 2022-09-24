@@ -15,3 +15,17 @@ That means you can take a chunk of markdown like this:
 and make it emit the HTML you'd expect for a video.
 
 ![Pancake video](https://www.youtube.com/watch?v=BPl7D20F2mE)
+
+Through a chunk of code that looks like this:
+
+```ruby
+def image(link, title, alt)
+  url = URI(link)
+  case url.host
+  when "www.youtube.com"
+    render_component Views::YoutubeEmbed.new(url)
+  else
+    ApplicationController.helpers.image_url link, title: title, alt: alt
+  end
+end
+```

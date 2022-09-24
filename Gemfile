@@ -73,14 +73,10 @@ end
 
 gem "phlex", "~> 0.2.1"
 
-gem "view_component", "~> 2.72"
-
-gem "html-pipeline", "~> 2.14"
-
 gem "redcarpet", "~> 3.5"
 
 gem "rouge", "~> 4.0"
 
 gem "sitepress-rails", "~> 3.1"
 
-gem "nokogiri", "~> 1.13"
+gem "tailwindcss-rails", "~> 2.0"
