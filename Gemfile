@@ -71,6 +71,6 @@ group :test do
   gem "webdrivers"
 end
 
-gem "phlex", "~> 0.2.1"
+gem "phlex", github: "joeldrapper/phlex"
 
 gem "view_component", "~> 2.72"
