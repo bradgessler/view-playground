@@ -12,7 +12,7 @@ class ApplicationMarkdown < BaseMarkdown
   end
 
   def enable
-    nil
+    [:fenced_code_blocks]
   end
 
   def image(link, title, alt)
