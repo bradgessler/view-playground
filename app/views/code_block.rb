@@ -1,6 +1,6 @@
 module Views
   class CodeBlock < Phlex::Component
-    FORMATTER = Rouge::Formatters::HTML.new
+    FORMATTER = Rouge::Formatters::HTMLInline.new("monokai.sublime")
 
     def initialize(code, syntax:)
       @code = code
