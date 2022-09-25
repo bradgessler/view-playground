@@ -29,6 +29,15 @@ with the `partial` method:
 
 Now when you call the method it won't leak instance varialbes, yay! They're all `nil` now!
 
+## Define a method definition for "strict" partials
+
+Anytime the word "magic" makes an appearance, I get a bit nervous. That happened for [Rails Strict Partials](https://edgeguides.rubyonrails.org/action_view_overview.html#strict-locals), which relies on a "magic comment" above a partial to make a call. The problem with this approach is:
+
+1. It won't work in other templating libraries like haml, slim, etc.
+2. Function definitions already do this; why re-invent the wheel?
+
+Let's give this a go in a way that has less magic.
+
 ## Compose templates with `render_layout`
 
 One of the most brilliant parts of Middleman is the [`wrap_layout`](https://middlemanapp.com/basics/layouts/#nested-layouts) method. It makes it possible to better compose layouts in other layouts, or call it directly from a view. I use it extensively [Sitepress](https://sitepress.cc) because it makes it insanely easy to build up a hiearchy of layouts. Usually I structure mine as follows:
