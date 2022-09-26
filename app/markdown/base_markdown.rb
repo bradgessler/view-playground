@@ -5,15 +5,11 @@ class BaseMarkdown < Redcarpet::Render::HTML
     []
   end
 
-  def render(doc)
-    renderer.render(doc)
+  def renderer
+    Redcarpet::Markdown.new(self.class, **features)
   end
 
   private
-    def renderer
-      Redcarpet::Markdown.new(self.class, **features)
-    end
-
     def features
       Hash[Array(enable).map{ [ _1, true ]}]
     end

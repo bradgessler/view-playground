@@ -1,4 +1,4 @@
-class ApplicationMarkdown < BaseMarkdown
+class ApplicationMarkdown < RailsMarkdown
   include Redcarpet::Render::SmartyPants
 
   def enable
@@ -6,16 +6,21 @@ class ApplicationMarkdown < BaseMarkdown
   end
 
   def block_code(code, language)
-    Views::CodeBlock.new(code, syntax: language).call
+    render Views::CodeBlock.new(code, syntax: language)
   end
 
   def image(link, title, alt)
     url = URI(link)
     case url.host
     when "www.youtube.com"
-      Views::YoutubeEmbed.new(url).call
+      render Views::YoutubeEmbed.new(url)
     else
-      ApplicationController.helpers.image_url link, title: title, alt: alt
+      super
     end
   end
+
+  private
+    def render(component)
+      component.call
+    end
 end
