@@ -6,7 +6,7 @@ module MarkdownRails
       Array(extensions).each { |extension| register_template_handler extension }
     end
 
-    def call(zemplate, source = template.source)
+    def call(template, source = template.source)
       markdown.render(source).inspect + '.html_safe'
     end
 
@@ -25,14 +25,4 @@ module MarkdownRails
   def self.register(*extensions, &block)
     Handler.new(extensions: extensions, &block)
   end
-end
-
-############################################]
-# Restart your server after making changes to these files.
-MarkdownRails.register :md, :markdown do
-  ApplicationMarkdown.new
-end
-
-MarkdownRails.register :rmd do
-  RailsMarkdown.new
 end
