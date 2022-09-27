@@ -1,6 +1,4 @@
 class BaseMarkdown < Redcarpet::Render::HTML
-  include Rails.application.routes.url_helpers
-
   def enable
     []
   end
@@ -11,6 +9,6 @@ class BaseMarkdown < Redcarpet::Render::HTML
 
   private
     def features
-      Hash[Array(enable).map{ [ _1, true ]}]
+      Hash[Array(enable).map{ |feature| [ feature, true ] }]
     end
 end
