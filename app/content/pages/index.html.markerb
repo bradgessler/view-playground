@@ -4,7 +4,7 @@ title: Rails View Playground
 
 Howdy! This is the Rails View Playground, a place for kids, pancakes, and soon, waffles.
 
-What makes this so special? Well for starters this is a markdown file that you can edit on-the-fly.
+<%= render partial: "pages/greetings" %>
 
 That means you can take a chunk of markdown like this:
 
@@ -23,7 +23,7 @@ def image(link, title, alt)
   url = URI(link)
   case url.host
   when "www.youtube.com"
-    render_component Views::YoutubeEmbed.new(url)
+    render Views::YoutubeEmbed.new(url)
   else
     ApplicationController.helpers.image_url link, title: title, alt: alt
   end

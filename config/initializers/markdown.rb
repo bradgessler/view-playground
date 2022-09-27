@@ -1,10 +1,10 @@
 require_relative "../../lib/markdown-rails"
 
 # Restart your server after making changes to these files.
-MarkdownRails.register :md, :markdown do
+MarkdownRails::Handler.register :md do
   ApplicationMarkdown.new
 end
 
-MarkdownRails.register :rmd do
-  RailsMarkdown.new
+MarkdownRails::ErbHandler.register :markerb do
+  ApplicationMarkdown.new
 end

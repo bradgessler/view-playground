@@ -7,14 +7,23 @@ module MarkdownRails
     end
 
     def call(template, source = template.source)
-      markdown.render(source).inspect + '.html_safe'
+      renderer.render(source).inspect + '.html_safe'
+    end
+
+    def self.register(*extensions, &block)
+      new extensions: extensions, &block
     end
 
     private
 
     def markdown
       @cache = nil unless Rails.configuration.cache_classes
-      @cache ||= @markdown.call.renderer
+      @cache ||= @markdown.call
+    end
+
+    def renderer
+      @renderer = nil unless Rails.configuration.cache_classes
+      @renderer ||= markdown.renderer
     end
 
     def register_template_handler(extension)
@@ -22,7 +31,18 @@ module MarkdownRails
     end
   end
 
-  def self.register(*extensions, &block)
-    Handler.new(extensions: extensions, &block)
+  class ErbHandler < Handler
+    def call(template, source = template.source)
+      compiled_source = compile_erb template, source
+      # TODO: This won't properly handle initializer blocks. Somehow
+      # I need to pass a reference to the block that's passed in.
+      "#{markdown.class.name}.new.renderer.render(begin;#{compiled_source};end).html_safe"
+    end
+
+    private
+
+    def compile_erb(template, source)
+      ActionView::Template.registered_template_handler(:erb).call(template, source)
+    end
   end
 end

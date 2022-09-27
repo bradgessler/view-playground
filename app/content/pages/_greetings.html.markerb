@@ -1,0 +1,7 @@
+---
+
+What makes this so special? Well for starters this is a markdown file that you can edit on-the-fly.
+
+It's <%= Time.current %>
+
+---
