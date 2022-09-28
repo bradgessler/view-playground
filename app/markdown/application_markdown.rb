@@ -1,4 +1,4 @@
-class ApplicationMarkdown < RailsMarkdown
+class ApplicationMarkdown < Markdown::Rails::Renderers::Rails
   include Redcarpet::Render::SmartyPants
 
   def enable
