@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/sitepress/markdown-rails.git
-  revision: 297ec692f346b0700a4990dcf70b8e772262f447
+  revision: 9a82b38adeb93afa4ee42e0b4b7417d3926ad8df
   specs:
-    markdown-rails (2.0.0.alpha4)
+    markdown-rails (2.0.0.alpha6)
       rails (>= 6.0.0)
       redcarpet (>= 3.0.0)
 
