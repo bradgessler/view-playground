@@ -80,3 +80,9 @@ gem "rouge", "~> 4.0"
 gem "sitepress-rails", "~> 3.1"
 
 gem "tailwindcss-rails", "~> 2.0"
+
+if gem_path = ENV["MARKDOWN_RAILS_GEM_PATH"]
+  gem "markdown-rails", path: path
+else
+  gem "markdown-rails", github: "sitepress/markdown-rails"
+end

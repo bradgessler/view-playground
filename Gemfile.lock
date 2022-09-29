@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/sitepress/markdown-rails.git
+  revision: 904371d11a72519e9637e465342e061f40b414a1
+  specs:
+    markdown-rails (2.0.0.alpha3)
+      rails (>= 7.0.4)
+      redcarpet (>= 3.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -236,6 +244,7 @@ DEPENDENCIES
   debug
   importmap-rails
   jbuilder
+  markdown-rails!
   phlex (~> 0.2.1)
   puma (~> 5.0)
   rails (~> 7.0.4)
