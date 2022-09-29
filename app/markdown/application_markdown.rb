@@ -1,7 +1,7 @@
 # You should read the docs at https://github.com/vmg/redcarpet and probably
 # delete a bunch of stuff below if you don't need it.
 
-class ApplicationMarkdown < Markdown::Rails::Renderers::Rails
+class ApplicationMarkdown < Markdown::Rails::Renderer::Rails
   # Reformats your boring punctation like " and " into “ and ” so you can look
   # and feel smarter. Read the docs at https://github.com/vmg/redcarpet#also-now-our-pants-are-much-smarter
   include Redcarpet::Render::SmartyPants
