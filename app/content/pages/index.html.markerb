@@ -2,7 +2,7 @@
 title: Rails View Playground
 ---
 
-Howdy! This is the Rails View Playground, a place for kids, pancakes, and soon, waffles.
+Howdy! This is the Rails View "Playground", a place for kids, pancakes, and soon, waffles.
 
 <%= render partial: "pages/greetings" %>
 
@@ -11,10 +11,6 @@ That means you can take a chunk of markdown like this:
 ```md
 ![Pancake video](https://www.youtube.com/watch?v=BPl7D20F2mE)
 ```
-
-and make it emit the HTML you'd expect for a video.
-
-![Pancake video](https://www.youtube.com/watch?v=BPl7D20F2mE)
 
 Through a chunk of code that looks like this:
 
@@ -29,3 +25,16 @@ def image(link, title, alt)
   end
 end
 ```
+
+# Rails image_tag for images
+
+Yeah, if you reference an image from Rails, it will figure it out:
+
+![Pancakes](pancakes.jpg)
+
+and make it emit the HTML you'd expect for a video.
+
+![Pancake video](https://www.youtube.com/watch?v=BPl7D20F2mE)
+
+So you can put different tags of stuff in there, pretty cool.
+
