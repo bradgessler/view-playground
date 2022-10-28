@@ -19,5 +19,6 @@ module ViewPlayground
     # config.time_zone = "Central Time (US & Canada)"
     # config.autoload_paths << Rails.root.join("lib")
     config.autoload_paths << Rails.root.join("app")
+    # config.autoload_paths << Rails.root.join("app/resources")
   end
 end

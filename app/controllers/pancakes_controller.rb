@@ -5,6 +5,7 @@ class PancakesController < ApplicationController
   # GET /pancakes or /pancakes.json
   def index
     @pancakes = Pancake.all
+    Resources::Pancake::Index.new.controller_request(self)
   end
 
   # GET /pancakes/1 or /pancakes/1.json

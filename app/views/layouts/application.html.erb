@@ -1,9 +1,7 @@
 <%= render_layout "html" do %>
   <body class="max-w-3xl mx-auto p-20 flex flex-col gap-y-20 dark:bg-slate-900 dark:text-slate-100">
     <header>
-      <h1 class="text-4xl font-extrabold">
-        <%= current_page.data.fetch("title", "Rails View Playground") %>
-      <h1>
+      <h1 class="text-4xl font-extrabold">Rails View Playground<h1>
     </header>
     <article class="prose dark:prose-invert">
       <%= yield %>
